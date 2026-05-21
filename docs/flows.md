@@ -19,6 +19,7 @@ The role details for these phases live in `docs/agents.md`. This page focuses on
 Important properties of this flow:
 
 - `brainstorm` is the normal starting point
+- brainstorming can produce large stories; the operator is responsible for applying software engineering judgment to keep stories appropriately bounded for reliable AI implementation
 - recording the story creates the durable handoff artifact
 - story review is optional but useful for risky or ambiguous work
 - analysis happens before implementation

@@ -49,6 +49,17 @@ work/
 
 `work/project-config.md` is the AI's operating map of the repository.
 
+This information is intentionally not kept in `AGENTS.md`.
+
+- `AGENTS.md` gives the stable, high-level workflow overview (what this project is and general repo structure).
+- `work/project-config.md` holds execution-critical, repo-specific operating detail used during implementation and validation.
+
+Keeping them separate avoids sending heavy, fast-changing operational rules to every agent invocation.
+
+- `AGENTS.md` stays small and durable as the general contract.
+- `work/project-config.md` can evolve with engineering process details without bloating the global agent prompt.
+- Agents load `work/project-config.md` when they need to perform software-delivery work, so they follow current local rules instead of guessing.
+
 Instead of forcing the model to infer structure and rules each time, the workflow gives it one file that answers questions like:
 
 - how the repo is organized
@@ -69,6 +80,19 @@ In practice, this file often contains:
 ## Why `work/guidelines/` exists
 
 `work/guidelines/` encodes local engineering judgment in a form that is small enough to load selectively and concrete enough to change execution.
+
+These files should act like senior-team pointers, not long tutorials.
+
+- Keep guidance compact and directive.
+- Nudge the AI on what to do and what to avoid.
+- Focus on expectations, constraints, and decision rules.
+- Avoid dumping many examples unless they are truly needed to prevent repeat mistakes.
+
+The model already knows general coding patterns; guidelines are for repo-local ways of working.
+
+- Think of this as onboarding notes for an experienced developer joining the team.
+- Provide enough context to align behavior quickly.
+- Let the AI adapt its execution from those pointers.
 
 This is where a repository captures the local rules that a long-time contributor already knows, such as:
 

@@ -59,7 +59,7 @@ Before the workflow can help in a repository, the scaffold needs to exist.
 The bootstrap path is:
 
 1. Run `init`.
-2. Create the local `work/` scaffold.
+2. Brainstorm and implement your bootstraping of the project
 3. Run `refresh-project-config`.
 4. Align `work/project-config.md` to repository reality.
 

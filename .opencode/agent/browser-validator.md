@@ -4,7 +4,7 @@ description: >-
   E2E triage, and scenario-level evidence collection using the existing
   agent-browser harness.
 mode: all
-model: openai/gpt-5.4
+model: openai/gpt-5.5
 ---
 # Output Directives
 - Start with action.

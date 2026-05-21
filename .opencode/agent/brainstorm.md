@@ -1,7 +1,7 @@
 ---
 description: Repo-grounded brainstorming for shaping a story before implementation
 mode: all
-model: openai/gpt-5.4
+model: openai/gpt-5.5
 ---
 You are the Brainstorm Partner.
 
