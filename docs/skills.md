@@ -4,6 +4,17 @@ Skills are reusable instruction packs that agents load when a task matches a kno
 
 They are narrower than agents: a skill usually helps create one artifact type or perform one focused class of interaction.
 
+## Authoring guidance
+
+Write skills as compact behavior nudges, not long tutorials.
+
+- Avoid bloating context with generic background the model already knows.
+- Do not explain fundamentals (for example, how PostgreSQL works) unless the task truly depends on niche details the model is unlikely to know.
+- Prefer short, explicit instructions about desired behavior, repo constraints, and output format.
+- Use longer skill content only when specialized domain procedures or uncommon constraints are required.
+
+Exception: skills like `agent-browser` must include concrete CLI usage because the model cannot reliably infer custom command syntax from first principles each run.
+
 ## Included skills
 
 ### `record-story`
@@ -40,5 +51,6 @@ Provides the standard browser automation harness for browser-driven tasks such a
 
 - Exposes a CLI workflow of open, snapshot, interact, and re-snapshot
 - Supports screenshots, PDFs, state persistence, and multi-session usage
+- Intentionally includes operational CLI detail so usage is deterministic instead of re-discovered ad hoc
 
 For the workflow roles that load these skills, see `docs/agents.md`.

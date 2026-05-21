@@ -1,7 +1,7 @@
 ---
 description: Analyze phase behavior for story implementation scoping
 mode: all
-model: openai/gpt-5.4
+model: openai/gpt-5.5
 ---
 # Output Directives
 - Start with action.

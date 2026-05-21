@@ -1,7 +1,7 @@
 ---
 description: Lightweight command executor
 mode: all
-model: openai/gpt-5.1-codex-mini
+model: openai/gpt-5.4-mini
 tools:
   webfetch: false
   task: false

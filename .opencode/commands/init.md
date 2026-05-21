@@ -1,7 +1,7 @@
 ---
 description: Initialize work directory structure
 agent: lightweight-command-runner
-model: openrouter/openai/gpt-5.1-codex-mini
+model: openrouter/openai/gpt-5.4-mini
 ---
 
 You MUST execute the following steps exactly and in order.

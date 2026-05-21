@@ -6,39 +6,29 @@ AiFact is a repo-local framework for using AI in software delivery without relyi
 
 Repository: https://github.com/arminc/aifact
 
-## Why it exists
+## Why it exists and core ideas
 
-Experienced engineers do not start each task from zero. They already know the repository structure, the local rules, the project history, the common failure modes, and what is still underspecified.
+Experienced engineers do not start each task from zero. They already know the repository structure, local rules, project history, common failure modes, and what is still underspecified.
 
 AI usually does not.
 
-That gap is the reason AiFact exists. Instead of relying on a long chat, hidden memory, or prompt luck, AiFact puts the working context into repo artifacts so the model can operate with durable, reviewable context.
-
-- project context lives in repo files
-- work state lives in repo files
-- reviews and decisions live in repo files
-- handoffs happen through repo files
-
-This makes AI-assisted delivery more auditable, more repeatable, and easier to maintain across sessions, contributors, and model upgrades.
-
-## Core ideas
+That gap is why AiFact exists. Instead of relying on long chat history, hidden memory, or prompt luck, AiFact stores working context in repository artifacts so model behavior is durable and reviewable.
 
 - Artifacts on disk are the source of truth.
 - `work/` holds durable project context, story state, ideas, ADRs, and release artifacts.
+- Reviews, decisions, and handoffs happen through repo files.
 - Agents have narrow roles with explicit handoffs instead of one general-purpose coding role doing everything.
 - Validation is a gate, not a courtesy step.
 
-## Why not just use a coding agent and a long chat?
+This makes AI-assisted delivery more auditable, repeatable, and maintainable across sessions, contributors, and model upgrades.
 
-That can work for small tasks, but it gets fragile when the work needs durable handoffs, repeatable validation, project-specific rules, and visible delivery history.
+## Why not just use a generic coding agent and a long chat?
 
-AiFact chooses a different tradeoff:
+A generic coding agent plus long chat can be fast for one-off tasks.
 
-- artifacts instead of hidden state
-- narrow roles instead of one giant role
-- repo-local context instead of repeated prompt explanations
-- validation as a gate instead of a suggestion
-- visible delivery history instead of ephemeral chat memory
+It becomes unreliable when delivery spans multiple sessions or people, because the key state lives mostly in conversation context that is hard to review, diff, hand off, or enforce.
+
+AiFact addresses that by moving the operating context into repo artifacts and running work through explicit phases with validation gates. The result is less prompt repetition, clearer ownership, and higher confidence that work can be resumed and audited later.
 
 ## How it works
 
